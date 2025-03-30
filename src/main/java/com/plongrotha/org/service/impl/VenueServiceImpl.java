@@ -20,42 +20,36 @@ public class VenueServiceImpl implements VenueService {
 	}
 
 	@Override
-	public List<Venue> getAllVenues(Integer offset, int size) {
-
+	public List<Venue> getAllVenues(Integer offset, Integer size) {
 		offset = (offset - 1) * size;
-
 		return venueRepository.getAllVenue(offset, size);
 	}
 
 	@Override
 	public Venue getVenueById(Long Id) {
-
 		Venue isVenue = venueRepository.getVenueById(Id);
 
 		if(isVenue ==  null) {
-			throw new NotFoundException(" student with id : " + Id + " is not found.");
+			throw new NotFoundException(" student with id : " + Id + " is not found");
 		}
 		return isVenue;
 	}
 
 	@Override
 	public Venue updateVenueById(Long Id, VenueRequest venueRequest) {
-
-		return null;
+		getVenueById(Id);
+		return venueRepository.updateVenueById(Id, venueRequest);
 	}
 
 	@Override
 	public Venue createVenue(VenueRequest venueRequest) {
-
-		Venue isVenue = venueRepository.createVenue(venueRequest);
-		
-		return null;
+		return venueRepository.createVenue(venueRequest);
 	}
 
 	@Override
-	public Venue deleteVenueById(Long Id) {
-
-		return null;
+	public void deleteVenueById(Long Id) {
+		getVenueById(Id);
+		venueRepository.deleteVenueById(Id);
 	}
 
 }

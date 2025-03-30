@@ -7,7 +7,7 @@ import com.plongrotha.org.model.request.VenueRequest;
 
 public interface VenueService {
 
-	List<Venue> getAllVenues(Integer offset, int size);
+	List<Venue> getAllVenues(Integer offset, Integer size);
 
 	Venue getVenueById(Long Id);
 
@@ -15,5 +15,5 @@ public interface VenueService {
 
 	Venue createVenue(VenueRequest venueRequest);
 
-	Venue deleteVenueById(Long Id);
+	void deleteVenueById(Long Id);
 }

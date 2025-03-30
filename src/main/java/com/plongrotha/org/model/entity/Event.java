@@ -15,5 +15,6 @@ public class Event {
 	private Long eventId;
 	private String eventName;
 	private LocalDate eventDate;
-	private List<Venue> venueId;
-}
+	private Venue venue;
+	private List<Attendee> attendees;
+ }

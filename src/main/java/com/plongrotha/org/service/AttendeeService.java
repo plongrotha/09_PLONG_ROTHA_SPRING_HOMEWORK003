@@ -7,7 +7,7 @@ import com.plongrotha.org.model.request.AttendeeRequest;
 
 public interface AttendeeService {
 
-	List<Attendee> getAllAttendees();
+	List<Attendee> getAllAttendees(Integer offset, Integer size);
 
 	Attendee getAttendeeById(Long Id);
 

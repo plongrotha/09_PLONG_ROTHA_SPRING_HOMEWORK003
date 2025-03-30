@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Attendee {
-
 	private Long AttendeeId;
 	private String AttendeeName;
 	private String AttendeeEmail;
-
 }

@@ -16,5 +16,6 @@ public class EventRequest {
 
 	private String eventName;
 	private LocalDate eventDate;
-	private List<Venue> venueId;
+	private Long venueId;
+	List<Long> attendeeIds;
 }

@@ -7,7 +7,7 @@ import com.plongrotha.org.model.request.EventRequest;
 
 public interface EventService {
 
-	List<Event> getAllEvents(Integer page, Integer size);
+	List<Event> getAllEvents(Integer offset, Integer size);
 
 	Event getEventById(Long Id);
 
@@ -15,8 +15,7 @@ public interface EventService {
 
 	Event createEvent(EventRequest eventRequest);
 
-	Event deleteEventById(Long Id);
+	void deleteEventById(Long Id);
 
-//	List<Event> getAllEvents();
 
 }
