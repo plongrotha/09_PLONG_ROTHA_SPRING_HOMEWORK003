@@ -46,8 +46,8 @@ public class AttendeeController {
 
 
 	@Operation(summary = "Get attendee by id")
-	@GetMapping("attendee-Id")
-	public ResponseEntity<?> getAttendeeById(@RequestParam Long Id) {
+	@GetMapping("{attendee-id}")
+	public ResponseEntity<?> getAttendeeById(@PathVariable("attendee-id") Long Id) {
 		Attendee attendee = attendeeService.getAttendeeById(Id);
 		return ResponseEntity.ok(ApiResponse.builder()
 				.httpStatus(HttpStatus.OK)
@@ -84,7 +84,7 @@ public class AttendeeController {
 	}
 
 	@Operation(summary = "Delete a attendee by id")
-	@DeleteMapping("attendee-id")
+	@DeleteMapping("{attendee-id}")
 	public ResponseEntity<?> deleteAttendeeById(@PathVariable("attendee-id") Long Id) {
 		Attendee deletedAttendee = attendeeService.deleteAttendeeById(Id);
 		return ResponseEntity.ok(ApiResponse.builder()
