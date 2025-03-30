@@ -30,7 +30,7 @@ public class AttendeeServiceImpl implements AttendeeService {
 	public Attendee getAttendeeById(Long Id) {
 		Attendee attendee = attendeeRepository.getAttendeeById(Id);
 		if (attendee == null) {
-			throw new NotFoundException("Attendee not found with id : " + Id );
+			throw new NotFoundException("Attendee not found with id : " + Id  );
 		}
 		return attendee;
 	}
